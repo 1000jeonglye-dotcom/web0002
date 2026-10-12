@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외출 준비물 체크</title>
+    <!-- Tailwind CSS for modern and responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for friendly typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/60 text-slate-700 min-h-screen flex flex-col items-center justify-between py-8 px-4 sm:px-6">
+
+    <main class="w-full max-w-md bg-white shadow-xl rounded-3xl p-6 sm:p-8 border border-amber-100 mb-6">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-2xl sm:text-3xl font-bold text-amber-800 mb-2">외출 준비물 체크</h1>
+            <p class="text-sm sm:text-base text-slate-500">안전하고 즐거운 외출을 위해 차근차근 준비해봐요!</p>
+        </header>
+
+        <!-- Story Photo Sequence Section -->
+        <section class="space-y-6 mb-8">
+            <!-- Scene 1 -->
+            <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-100 flex flex-col items-center text-center">
+                <div class="w-full h-48 sm:h-52 bg-amber-100 rounded-xl overflow-hidden mb-3 shadow-inner flex items-center justify-center">
+                    <img src="scene1.jpg" alt="외출을 준비해요" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x250/fef3c7/b45309?text=외출을+준비해요';">
+                </div>
+                <p class="font-semibold text-amber-900 text-sm sm:text-base">1. 외출을 준비해요</p>
+            </div>
+
+            <!-- Scene 2 -->
+            <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-100 flex flex-col items-center text-center">
+                <div class="w-full h-48 sm:h-52 bg-amber-100 rounded-xl overflow-hidden mb-3 shadow-inner flex items-center justify-center">
+                    <img src="scene2.jpg" alt="준비물을 확인해요" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x250/fef3c7/b45309?text=준비물을+확인해요';">
+                </div>
+                <p class="font-semibold text-amber-900 text-sm sm:text-base">2. 준비물을 확인해요</p>
+            </div>
+
+            <!-- Scene 3 -->
+            <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-100 flex flex-col items-center text-center">
+                <div class="w-full h-48 sm:h-52 bg-amber-100 rounded-xl overflow-hidden mb-3 shadow-inner flex items-center justify-center">
+                    <img src="scene3.jpg" alt="즐겁게 출발해요" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x250/fef3c7/b45309?text=즐겁게+출발해요';">
+                </div>
+                <p class="font-semibold text-amber-900 text-sm sm:text-base">3. 즐겁게 출발해요</p>
+            </div>
+        </section>
+
+        <!-- Checklist Section -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <span class="text-amber-600">☑</span> 준비물 목록
+            </h2>
+            <div class="space-y-3">
+                <label class="flex items-center p-4 bg-slate-50 hover:bg-amber-50/40 rounded-2xl border border-slate-200 cursor-pointer transition shadow-sm">
+                    <input type="checkbox" data-item="휴대전화" class="w-6 h-6 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer">
+                    <span class="ml-4 text-base sm:text-lg font-medium text-slate-700">휴대전화</span>
+                </label>
+                <label class="flex items-center p-4 bg-slate-50 hover:bg-amber-50/40 rounded-2xl border border-slate-200 cursor-pointer transition shadow-sm">
+                    <input type="checkbox" data-item="지갑" class="w-6 h-6 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer">
+                    <span class="ml-4 text-base sm:text-lg font-medium text-slate-700">지갑</span>
+                </label>
+                <label class="flex items-center p-4 bg-slate-50 hover:bg-amber-50/40 rounded-2xl border border-slate-200 cursor-pointer transition shadow-sm">
+                    <input type="checkbox" data-item="물병" class="w-6 h-6 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer">
+                    <span class="ml-4 text-base sm:text-lg font-medium text-slate-700">물병</span>
+                </label>
+                <label class="flex items-center p-4 bg-slate-50 hover:bg-amber-50/40 rounded-2xl border border-slate-200 cursor-pointer transition shadow-sm">
+                    <input type="checkbox" data-item="우산" class="w-6 h-6 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer">
+                    <span class="ml-4 text-base sm:text-lg font-medium text-slate-700">우산</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="space-y-3">
+            <button id="checkBtn" class="w-full py-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-2xl shadow-lg transition active:scale-[0.98] text-lg">
+                준비 확인
+            </button>
+            <button id="resetBtn" class="w-full py-4 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-2xl transition active:scale-[0.98] text-lg">
+                다시 확인하기
+            </button>
+        </div>
+
+        <!-- Result Message Box -->
+        <div id="resultBox" class="mt-6 p-4 rounded-2xl text-center text-base font-semibold hidden transition-all"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-xs text-slate-400 text-center">
+        외출 준비물 체크 웹앱 © 2026
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkBtn = document.getElementById('checkBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const resultBox = document.getElementById('resultBox');
+
+            // Check items button click handler
+            checkBtn.addEventListener('click', () => {
+                let uncheckedItems = [];
+
+                checkboxes.forEach(checkbox => {
+                    if (!checkbox.checked) {
+                        uncheckedItems.push(checkbox.getAttribute('data-item'));
+                    }
+                });
+
+                resultBox.classList.remove('hidden');
+
+                if (uncheckedItems.length === 0) {
+                    // All items checked
+                    resultBox.className = "mt-6 p-4 rounded-2xl text-center text-base sm:text-lg font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 shadow-sm";
+                    resultBox.textContent = "준비 완료! 즐겁게 다녀오세요.";
+                } else {
+                    // Some items missing
+                    resultBox.className = "mt-6 p-4 rounded-2xl text-center text-base sm:text-lg font-semibold bg-rose-100 text-rose-800 border border-rose-200 shadow-sm";
+                    resultBox.textContent = `아직 챙기지 않은 준비물이 있어요: ${uncheckedItems.join(', ')}`;
+                }
+            });
+
+            // Reset button click handler
+            resetBtn.addEventListener('click', () => {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                resultBox.classList.add('hidden');
+                resultBox.textContent = '';
+            });
+        });
+    </script>
+</body>
+</html>
